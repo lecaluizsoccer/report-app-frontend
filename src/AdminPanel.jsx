@@ -13,6 +13,8 @@ const categoryEmoji = {
   other: "🚧",
 };
 
+const API = "https://report-app-backend-wnop.onrender.com";
+
 export default function AdminPanel({ reports, onRefresh }) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
@@ -24,7 +26,7 @@ export default function AdminPanel({ reports, onRefresh }) {
     e.preventDefault();
     setLoginError("");
     try {
-      const res = await fetch("https://report-app-backend-wnop.onrender.com/reports/admin/login", {
+      const res = await fetch(`${API}/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -43,7 +45,7 @@ export default function AdminPanel({ reports, onRefresh }) {
   const handleStatusChange = async (id, status) => {
     setLoadingId(id);
     try {
-      await fetch(`https://report-app-backend-wnop.onrender.com/reports/reports/${id}/status`, {
+      await fetch(`${API}/reports/${id}/status`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
@@ -59,7 +61,7 @@ export default function AdminPanel({ reports, onRefresh }) {
     if (!confirm("Are you sure you want to delete this report?")) return;
     setLoadingId(id);
     try {
-      await fetch(`https://report-app-backend-wnop.onrender.com/reports/reports/${id}`, { method: "DELETE" });
+      await fetch(`${API}/reports/${id}`, { method: "DELETE" });
       onRefresh();
     } catch {
       alert("Failed to delete report");
