@@ -10,7 +10,7 @@ function App() {
 
   const fetchReports = async () => {
     try {
-      const res = await fetch("http://localhost:3000/reports");
+      const res = await fetch("https://report-app-backend-wnop.onrender.com/reports");
       const data = await res.json();
       setReports(data);
     } catch (err) {

@@ -63,7 +63,7 @@ export default function ReportForm({ onReportAdded }) {
 
       const reportData = { category, description, location, imageUrl };
 
-      const res = await fetch("http://localhost:3000/reports", {
+      const res = await fetch("https://report-app-backend-wnop.onrender.com/reports", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reportData),
