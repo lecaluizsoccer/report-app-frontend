@@ -1,8 +1,11 @@
+@import "tailwindcss";
+
 :root {
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/1.6 var(--sans);
+  line-height: 1.6;
   color-scheme: light dark;
   color: #1f2937;
   background: #f3f4f6;
