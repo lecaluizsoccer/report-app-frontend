@@ -4,6 +4,19 @@ const STATUS_LABELS = {
   resolved: { label: "Resolvido", color: "bg-green-100 text-green-600" },
 };
 
+const categoryTranslation = {
+  // Portuguese
+  buraco: "🕳️ Buraco",
+  lixo: "🗑️ Lixo",
+  "iluminação": "💡 Iluminação",
+  outro: "🚧 Outro",
+  // English (old reports)
+  pothole: "🕳️ Buraco",
+  trash: "🗑️ Lixo",
+  lighting: "💡 Iluminação",
+  other: "🚧 Outro",
+};
+
 export default function ReportList({ reports }) {
   return (
     <div className="bg-white p-5 rounded-xl shadow-md w-full">
@@ -26,18 +39,18 @@ export default function ReportList({ reports }) {
               {r.imageUrl && (
                 <img
                   src={r.imageUrl}
-                  alt="Report"
+                  alt="Relatório"
                   className="w-full rounded-lg object-cover max-h-48 mb-3"
                 />
               )}
 
               {/* Top row: category + date */}
               <div className="flex justify-between items-center text-sm mb-1">
-                <span className="font-semibold capitalize text-gray-800">
-                  {r.category}
+                <span className="font-semibold text-gray-800">
+                  {categoryTranslation[r.category] || r.category}
                 </span>
                 <span className="text-gray-400 text-xs">
-                  {new Date(r.createdAt).toLocaleDateString()}
+                  {new Date(r.createdAt).toLocaleDateString("pt-BR")}
                 </span>
               </div>
 

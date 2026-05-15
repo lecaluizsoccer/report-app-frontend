@@ -6,11 +6,17 @@ const STATUS_LABELS = {
   resolved: { label: "Resolvido", color: "bg-green-100 text-green-600" },
 };
 
-const categoryEmoji = {
-  buraco: "🕳️",
-  lixo: "🗑️",
-  iluminação: "💡",
-  outro: "🚧",
+const categoryTranslation = {
+  // Portuguese
+  buraco: "🕳️ Buraco",
+  lixo: "🗑️ Lixo",
+  "iluminação": "💡 Iluminação",
+  outro: "🚧 Outro",
+  // English (old reports)
+  pothole: "🕳️ Buraco",
+  trash: "🗑️ Lixo",
+  lighting: "💡 Iluminação",
+  other: "🚧 Outro",
 };
 
 const API = "https://report-app-backend-wnop.onrender.com";
@@ -35,10 +41,10 @@ export default function AdminPanel({ reports, onRefresh }) {
       if (data.success) {
         setLoggedIn(true);
       } else {
-        setLoginError("Invalid username or password.");
+        setLoginError("Usuário ou senha inválidos.");
       }
     } catch {
-      setLoginError("Could not connect to server.");
+      setLoginError("Não foi possível conectar ao servidor.");
     }
   };
 
@@ -52,19 +58,19 @@ export default function AdminPanel({ reports, onRefresh }) {
       });
       onRefresh();
     } catch (err) {
-      alert("Failed to update status");
+      alert("Erro ao atualizar o status.");
     }
     setLoadingId(null);
   };
 
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this report?")) return;
+    if (!confirm("Tem certeza que deseja excluir este relatório?")) return;
     setLoadingId(id);
     try {
       await fetch(`${API}/reports/${id}`, { method: "DELETE" });
       onRefresh();
     } catch {
-      alert("Failed to delete report");
+      alert("Erro ao excluir o relatório.");
     }
     setLoadingId(null);
   };
@@ -109,7 +115,7 @@ export default function AdminPanel({ reports, onRefresh }) {
             type="submit"
             style={{width:"100%", backgroundColor:"#2563eb", color:"white", padding:"12px", borderRadius:"8px", fontSize:"14px", fontWeight:500, border:"none", cursor:"pointer"}}
           >
-            Logar
+            Entrar
           </button>
         </form>
       </div>
@@ -128,7 +134,7 @@ export default function AdminPanel({ reports, onRefresh }) {
           onClick={() => setLoggedIn(false)}
           className="text-xs text-gray-400 hover:text-gray-600 transition"
         >
-          Deslogar
+          Sair
         </button>
       </div>
 
@@ -146,7 +152,7 @@ export default function AdminPanel({ reports, onRefresh }) {
             {r.imageUrl && (
               <img
                 src={r.imageUrl}
-                alt="Report"
+                alt="Relatório"
                 className="w-full rounded-lg object-cover max-h-40"
               />
             )}
@@ -154,11 +160,11 @@ export default function AdminPanel({ reports, onRefresh }) {
             {/* Top row */}
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-sm font-semibold text-gray-800 capitalize">
-                  {categoryEmoji[r.category] || "📍"} {r.category}
+                <p className="text-sm font-semibold text-gray-800">
+                  {categoryTranslation[r.category] || r.category}
                 </p>
                 <p className="text-xs text-gray-400 mt-0.5">
-                  {new Date(r.createdAt).toLocaleDateString()}
+                  {new Date(r.createdAt).toLocaleDateString("pt-BR")}
                 </p>
               </div>
               <span className={`text-xs font-medium px-2 py-1 rounded-full ${STATUS_LABELS[r.status]?.color || "bg-gray-100 text-gray-500"}`}>
@@ -178,7 +184,7 @@ export default function AdminPanel({ reports, onRefresh }) {
 
             {/* Status selector */}
             <div className="flex flex-col gap-1">
-              <label className="text-xs font-medium text-gray-500">Change status</label>
+              <label className="text-xs font-medium text-gray-500">Alterar status</label>
               <select
                 value={r.status || "open"}
                 disabled={loadingId === r._id}
@@ -201,7 +207,7 @@ export default function AdminPanel({ reports, onRefresh }) {
                          text-sm font-medium hover:bg-red-50 transition
                          disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loadingId === r._id ? "Processando..." : "🗑️ Delete Relatório"}
+              {loadingId === r._id ? "Processando..." : "🗑️ Excluir Relatório"}
             </button>
           </div>
         ))
