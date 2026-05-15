@@ -55,7 +55,7 @@ export default function ReportForm({ onReportAdded }) {
       let imageUrl = null;
 
       if (image) {
-        setUploadProgress("Uploading photo...");
+        setUploadProgress("Carregando foto...");
         imageUrl = await uploadToCloudinary(image);
       }
 

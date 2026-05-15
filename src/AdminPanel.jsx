@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const STATUS_LABELS = {
-  open: { label: "Open", color: "bg-red-100 text-red-600" },
-  in_progress: { label: "In Progress", color: "bg-yellow-100 text-yellow-600" },
-  resolved: { label: "Resolved", color: "bg-green-100 text-green-600" },
+  open: { label: "Aberto", color: "bg-red-100 text-red-600" },
+  in_progress: { label: "Em Andamento", color: "bg-yellow-100 text-yellow-600" },
+  resolved: { label: "Resolvido", color: "bg-green-100 text-green-600" },
 };
 
 const categoryEmoji = {
