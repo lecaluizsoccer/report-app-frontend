@@ -1,7 +1,7 @@
 const STATUS_LABELS = {
-  open: { label: "Open", color: "bg-red-100 text-red-600" },
-  in_progress: { label: "In Progress", color: "bg-yellow-100 text-yellow-600" },
-  resolved: { label: "Resolved", color: "bg-green-100 text-green-600" },
+  open: { label: "Aberto", color: "bg-red-100 text-red-600" },
+  in_progress: { label: "Em Andamento", color: "bg-yellow-100 text-yellow-600" },
+  resolved: { label: "Resolvido", color: "bg-green-100 text-green-600" },
 };
 
 export default function ReportList({ reports }) {
@@ -56,7 +56,7 @@ export default function ReportList({ reports }) {
 
                 <span className={`text-xs font-medium px-2 py-1 rounded-full
                   ${STATUS_LABELS[r.status]?.color || "bg-gray-100 text-gray-500"}`}>
-                  {STATUS_LABELS[r.status]?.label || "Open"}
+                  {STATUS_LABELS[r.status]?.label || "Aberto"}
                 </span>
               </div>
             </div>

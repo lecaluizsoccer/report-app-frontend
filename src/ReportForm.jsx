@@ -176,7 +176,7 @@ export default function ReportForm({ onReportAdded }) {
                      font-medium hover:bg-blue-700 active:bg-blue-800
                      disabled:opacity-50 disabled:cursor-not-allowed transition"
         >
-          {loading ? uploadProgress || "Submitting..." : "Enviar Relatório"}
+          {loading ? uploadProgress || "Enviando..." : "Enviar Relatório"}
         </button>
 
       </form>
