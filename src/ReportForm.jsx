@@ -146,10 +146,10 @@ export default function ReportForm({ onReportAdded }) {
             required
           >
             <option value="">Selecione a categoria</option>
-            <option value="pothole">🕳️ Buraco</option>
-            <option value="trash">🗑️ Lixo</option>
-            <option value="lighting">💡 iluminação</option>
-            <option value="other">🚧 outro</option>
+            <option value="buraco">🕳️ Buraco</option>
+            <option value="lixo">🗑️ Lixo</option>
+            <option value="iluminação">💡 iluminação</option>
+            <option value="outro">🚧 outro</option>
           </select>
         </div>
 
