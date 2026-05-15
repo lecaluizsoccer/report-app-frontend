@@ -59,7 +59,7 @@ export default function ReportForm({ onReportAdded }) {
         imageUrl = await uploadToCloudinary(image);
       }
 
-      setUploadProgress("Saving report...");
+      setUploadProgress("Salvando relatório...");
 
       const reportData = { category, description, location, imageUrl };
 
@@ -70,7 +70,7 @@ export default function ReportForm({ onReportAdded }) {
       });
 
       await res.json();
-      alert("Report saved!");
+      alert("Relatório salvo!");
       onReportAdded && onReportAdded();
 
       // reset
@@ -82,7 +82,7 @@ export default function ReportForm({ onReportAdded }) {
       setUploadProgress("");
     } catch (err) {
       console.error(err);
-      alert("Error saving report: " + err.message);
+      alert("EErro ao salvar o relatório: " + err.message);
     }
 
     setLoading(false);
@@ -92,7 +92,7 @@ export default function ReportForm({ onReportAdded }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-md w-full">
       <h2 className="text-lg font-semibold mb-6 text-gray-800">
-        Report an Issue
+        Informar um problema
       </h2>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -100,7 +100,7 @@ export default function ReportForm({ onReportAdded }) {
         {/* Photo */}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-gray-600">
-            Photo (optional)
+            Foto (opcional)
           </label>
           <input
             type="file"
@@ -121,7 +121,7 @@ export default function ReportForm({ onReportAdded }) {
 
         {/* Location */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-gray-600">Location</label>
+          <label className="text-sm font-medium text-gray-600">Localização</label>
           <button
             type="button"
             onClick={getLocation}
@@ -130,13 +130,13 @@ export default function ReportForm({ onReportAdded }) {
           >
             {location
               ? `📍 ${location.lat.toFixed(3)}, ${location.lng.toFixed(3)}`
-              : "📍 Enable location"}
+              : "📍 Habilitar localização"}
           </button>
         </div>
 
         {/* Category */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-gray-600">Category</label>
+          <label className="text-sm font-medium text-gray-600">Categoria</label>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
@@ -155,9 +155,9 @@ export default function ReportForm({ onReportAdded }) {
 
         {/* Description */}
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-gray-600">Description</label>
+          <label className="text-sm font-medium text-gray-600">Descrição</label>
           <textarea
-            placeholder="Describe the issue..."
+            placeholder="Descreva o problema..."
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={4}
@@ -176,7 +176,7 @@ export default function ReportForm({ onReportAdded }) {
                      font-medium hover:bg-blue-700 active:bg-blue-800
                      disabled:opacity-50 disabled:cursor-not-allowed transition"
         >
-          {loading ? uploadProgress || "Submitting..." : "Submit Report"}
+          {loading ? uploadProgress || "Submitting..." : "Enviar Relatório"}
         </button>
 
       </form>

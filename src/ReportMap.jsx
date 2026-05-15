@@ -46,14 +46,14 @@ export default function ReportMap({ reports }) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden w-full">
       <div className="px-6 py-4 border-b border-gray-100">
-        <h2 className="text-lg font-semibold text-gray-800">🗺️ Report Map</h2>
+        <h2 className="text-lg font-semibold text-gray-800">🗺️ Mapa do relatório</h2>
         {withLocation.length === 0 ? (
           <p className="text-sm text-gray-400 mt-1">
             Ainda não há dados de localização — habilite a localização ao enviar um relatório.
           </p>
         ) : (
           <p className="text-sm text-gray-400 mt-1">
-            {withLocation.length} report{withLocation.length !== 1 ? "s" : ""} on the map
+            {withLocation.length} relatório{withLocation.length !== 1 ? "s" : ""} no mapa
           </p>
         )}
       </div>

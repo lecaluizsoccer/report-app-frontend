@@ -109,7 +109,7 @@ export default function AdminPanel({ reports, onRefresh }) {
             type="submit"
             style={{width:"100%", backgroundColor:"#2563eb", color:"white", padding:"12px", borderRadius:"8px", fontSize:"14px", fontWeight:500, border:"none", cursor:"pointer"}}
           >
-            Login
+            Logar
           </button>
         </form>
       </div>
@@ -122,19 +122,19 @@ export default function AdminPanel({ reports, onRefresh }) {
       {/* Header */}
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold text-gray-800">
-          ⚙️ Admin Panel
+          ⚙️ Painel de administração
         </h2>
         <button
           onClick={() => setLoggedIn(false)}
           className="text-xs text-gray-400 hover:text-gray-600 transition"
         >
-          Logout
+          Deslogar
         </button>
       </div>
 
       {reports.length === 0 ? (
         <div className="bg-white p-5 rounded-xl shadow-md text-center">
-          <p className="text-gray-400 text-sm py-6">No reports yet.</p>
+          <p className="text-gray-400 text-sm py-6">Ainda não há relatórios.</p>
         </div>
       ) : (
         reports.map((r) => (
@@ -187,9 +187,9 @@ export default function AdminPanel({ reports, onRefresh }) {
                            bg-white text-gray-700 focus:outline-none focus:ring-2
                            focus:ring-blue-500 disabled:opacity-50"
               >
-                <option value="open">Open</option>
-                <option value="in_progress">In Progress</option>
-                <option value="resolved">Resolved</option>
+                <option value="open">Aberto</option>
+                <option value="in_progress">Em Progresso</option>
+                <option value="resolved">Resolvido</option>
               </select>
             </div>
 
@@ -201,7 +201,7 @@ export default function AdminPanel({ reports, onRefresh }) {
                          text-sm font-medium hover:bg-red-50 transition
                          disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loadingId === r._id ? "Processing..." : "🗑️ Delete Report"}
+              {loadingId === r._id ? "Processando..." : "🗑️ Delete Relatório"}
             </button>
           </div>
         ))
