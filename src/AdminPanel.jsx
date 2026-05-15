@@ -73,12 +73,12 @@ export default function AdminPanel({ reports, onRefresh }) {
   if (!loggedIn) {
     return (
       <div style={{backgroundColor:"white", borderRadius:"12px", boxShadow:"0 1px 3px rgba(0,0,0,0.1)", width:"100%", padding:"32px"}}>
-        <h2 style={{fontSize:"18px", fontWeight:600, marginBottom:"6px", color:"#1f2937"}}>🔐 Admin Login</h2>
-        <p style={{fontSize:"14px", color:"#9ca3af", marginBottom:"28px"}}>Enter your credentials to continue.</p>
+        <h2 style={{fontSize:"18px", fontWeight:600, marginBottom:"6px", color:"#1f2937"}}>🔐 Login de administrador</h2>
+        <p style={{fontSize:"14px", color:"#9ca3af", marginBottom:"28px"}}>Insira suas credenciais para continuar.</p>
 
         <form onSubmit={handleLogin} style={{display:"flex", flexDirection:"column", gap:"20px"}}>
           <div style={{display:"flex", flexDirection:"column", gap:"6px"}}>
-            <label style={{fontSize:"14px", fontWeight:500, color:"#4b5563"}}>Username</label>
+            <label style={{fontSize:"14px", fontWeight:500, color:"#4b5563"}}>Nome de usuário</label>
             <input
               type="text"
               value={username}
@@ -90,7 +90,7 @@ export default function AdminPanel({ reports, onRefresh }) {
           </div>
 
           <div style={{display:"flex", flexDirection:"column", gap:"6px"}}>
-            <label style={{fontSize:"14px", fontWeight:500, color:"#4b5563"}}>Password</label>
+            <label style={{fontSize:"14px", fontWeight:500, color:"#4b5563"}}>Senha</label>
             <input
               type="password"
               value={password}
