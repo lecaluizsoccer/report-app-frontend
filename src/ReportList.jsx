@@ -6,13 +6,13 @@ const STATUS_LABELS = {
 
 const categoryTranslation = {
   // Portuguese
-  buraco: "🕳️ Buraco",
-  lixo: "🗑️ Lixo",
+  buraco: "🔴 Buraco",
+  lixo: "🗑 Lixo",
   "iluminação": "💡 Iluminação",
   outro: "🚧 Outro",
   // English (old reports)
-  pothole: "🕳️ Buraco",
-  trash: "🗑️ Lixo",
+  pothole: "🔴 Buraco",
+  trash: "🗑 Lixo",
   lighting: "💡 Iluminação",
   other: "🚧 Outro",
 };
