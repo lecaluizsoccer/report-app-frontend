@@ -7,10 +7,10 @@ const STATUS_LABELS = {
 };
 
 const categoryEmoji = {
-  pothole: "🕳️",
-  trash: "🗑️",
-  lighting: "💡",
-  other: "🚧",
+  buraco: "🕳️",
+  lixo: "🗑️",
+  iluminação: "💡",
+  outro: "🚧",
 };
 
 const API = "https://report-app-backend-wnop.onrender.com";

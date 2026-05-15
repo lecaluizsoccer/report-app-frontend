@@ -8,12 +8,12 @@ export default function ReportList({ reports }) {
   return (
     <div className="bg-white p-5 rounded-xl shadow-md w-full">
       <h2 className="text-lg font-semibold mb-4 text-gray-800">
-        📋 Reports
+        📋 Relatórios
       </h2>
 
       {reports.length === 0 ? (
         <p className="text-gray-400 text-sm text-center py-6">
-          No reports yet. Be the first to report an issue!
+          Nenhum relatório ainda. Seja o primeiro a reportar um problema!
         </p>
       ) : (
         <div className="flex flex-col gap-3">

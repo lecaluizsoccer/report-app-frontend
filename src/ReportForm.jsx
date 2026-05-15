@@ -145,11 +145,11 @@ export default function ReportForm({ onReportAdded }) {
                        focus:ring-blue-500"
             required
           >
-            <option value="">Select a category</option>
-            <option value="pothole">🕳️ Pothole</option>
-            <option value="trash">🗑️ Trash</option>
-            <option value="lighting">💡 Lighting</option>
-            <option value="other">🚧 Other</option>
+            <option value="">Selecione a categoria</option>
+            <option value="pothole">🕳️ Buraco</option>
+            <option value="trash">🗑️ Lixo</option>
+            <option value="lighting">💡 iluminação</option>
+            <option value="other">🚧 outro</option>
           </select>
         </div>
 

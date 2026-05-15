@@ -23,8 +23,8 @@ function App() {
   }, []);
 
   const tabs = [
-    { id: "report", label: "📝 Report" },
-    { id: "view",   label: "🗺️ View"   },
+    { id: "report", label: "📝 Reportar" },
+    { id: "view",   label: "🗺️ Visualizar"   },
     { id: "admin",  label: "⚙️ Admin"  },
   ];
 
@@ -35,10 +35,10 @@ function App() {
         {/* Header */}
         <header className="mb-6 text-center">
           <h1 className="text-2xl font-bold text-gray-800">
-            🏙️ Community Reporter
+            🏙️ Repórter da comunidade
           </h1>
           <p className="text-sm text-gray-500 mt-1">
-            Report issues in your neighborhood
+            Reporte problemas em sua comunidade
           </p>
         </header>
 

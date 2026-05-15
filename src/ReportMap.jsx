@@ -12,10 +12,10 @@ L.Icon.Default.mergeOptions({
 });
 
 const categoryEmoji = {
-  pothole: "🕳️",
-  trash: "🗑️",
-  lighting: "💡",
-  other: "🚧",
+  buraco: "🕳️",
+  lixo: "🗑️",
+  iluminação: "💡",
+  outro: "🚧",
 };
 
 // Inner component that adjusts the map view to fit all markers
@@ -49,7 +49,7 @@ export default function ReportMap({ reports }) {
         <h2 className="text-lg font-semibold text-gray-800">🗺️ Report Map</h2>
         {withLocation.length === 0 ? (
           <p className="text-sm text-gray-400 mt-1">
-            No location data yet — enable location when submitting a report.
+            Ainda não há dados de localização — habilite a localização ao enviar um relatório.
           </p>
         ) : (
           <p className="text-sm text-gray-400 mt-1">
